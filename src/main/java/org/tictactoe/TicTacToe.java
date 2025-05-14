@@ -39,4 +39,8 @@ public class TicTacToe {
         return arrayNewPosition;
     }
 
+    static void placeNewPosition(int[] newPositions, char currentPlayer){
+        board[newPositions[0]][newPositions[1]] = currentPlayer;
+    }
+
 }
