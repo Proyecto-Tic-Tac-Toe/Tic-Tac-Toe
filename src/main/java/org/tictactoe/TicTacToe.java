@@ -1,12 +1,16 @@
 package org.tictactoe;
 
+import java.util.Scanner;
+
 public class TicTacToe {
+
     //Crear metodo print board
     private static char[][] board = {
             {'_', '_', '_'},
             {'_', '_', '_'},
             {'_', '_', '_'}
     };
+
     //Crear array de dos dimensiones
     static void printBoard () {
         System.out.print("---------");
@@ -20,9 +24,19 @@ public class TicTacToe {
             System.out.println();
 
         }
-        System.out.print("---------");
+        System.out.println("---------");
+    }
 
-
+    static int[] captureNewPosition(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Select a row and a column: ");
+        String newPosition = scanner.nextLine();
+        String[] stringArrayNewPosition = newPosition.split(" ");
+        int[] arrayNewPosition = new int[2];
+        for(int i = 0; i < stringArrayNewPosition.length; i++){
+            arrayNewPosition[i] = Integer.parseInt(stringArrayNewPosition[i]);
+        }
+        return arrayNewPosition;
     }
 
 }
