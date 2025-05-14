@@ -7,9 +7,10 @@ import static org.tictactoe.TicTacToe.*;
 public class Main {
     public static void main(String[] args) {
         printBoard();
-        placeNewPosition(captureNewPosition(), 'x');
+        placeNewPosition(checkCorrectPosition(captureNewPosition()), 'x');
         printBoard();
-
+        placeNewPosition(checkCorrectPosition(captureNewPosition()), 'x');
+        printBoard();
 
     }
 }
