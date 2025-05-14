@@ -29,7 +29,7 @@ public class TicTacToe {
 
     static int[] captureNewPosition(){
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Select a row and a column: ");
+        System.out.print("Select a row (0-2) and a column (0-2), enter the numbers separated by a space: ");
         String newPosition = scanner.nextLine();
         String[] stringArrayNewPosition = newPosition.split(" ");
         int[] arrayNewPosition = new int[2];
