@@ -77,4 +77,16 @@ public class TicTacToe {
         }
         return false;
     }
+
+    static boolean checkDraw(){
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board.length; j++) {
+                if (board[i][j] == '_') {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
 }
