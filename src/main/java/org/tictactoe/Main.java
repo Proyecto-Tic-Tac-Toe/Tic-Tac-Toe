@@ -13,13 +13,23 @@ public class Main {
         System.out.println("██║ ╚████║███████╗╚███╔███╔╝    ╚██████╔╝██║  ██║██║ ╚═╝ ██║███████╗");
         System.out.println("╚═╝  ╚═══╝╚══════╝ ╚══╝╚══╝      ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝");
 
+        char currentPlayer = 'x';
+        boolean gameOver = false;
 
-
-        printBoard();
-        placeNewPosition(checkCorrectPosition(captureNewPosition()), 'x');
-        printBoard();
-        placeNewPosition(checkCorrectPosition(captureNewPosition()), 'x');
-        printBoard();
+        while (!gameOver) {
+            printBoard();
+            placeNewPosition(checkCorrectPosition(captureNewPosition()), currentPlayer);
+            printBoard();
+            if(checkWin(currentPlayer)){
+                System.out.println("Player " + currentPlayer + " wins!");
+                gameOver = true;
+            } else if (checkDraw()) {
+                ;
+                System.out.println("It's a draw!");
+                gameOver = true;
+            }
+            currentPlayer = (currentPlayer == 'x') ? 'o' : 'x';
+        }
 
         System.out.println("  ██████╗  █████╗ ███╗   ███╗███████╗     ██████╗ ██╗   ██╗███████╗██████╗ ");
         System.out.println(" ██╔════╝ ██╔══██╗████╗ ████║██╔════╝    ██╔═══██╗██║   ██║██╔════╝██╔══██╗");
