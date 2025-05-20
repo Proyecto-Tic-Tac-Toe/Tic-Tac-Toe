@@ -1,23 +1,29 @@
-package org.tictactoe;
+package org.tictactoe.entity;
 
 import java.util.Scanner;
 
-public class TicTacToe {
+public class Board {
 
-    //Crear metodo print board
-    private static char[][] board = {
-            {'_', '_', '_'},
-            {'_', '_', '_'},
-            {'_', '_', '_'}
-    };
 
-    //Crear array de dos dimensiones
-    static void printBoard () {
+    private static String[size][size] board;
+    private static int size = 3;
+
+
+
+    public static void initializeBoard (){
+        for(int i = 0; i < size; i++){
+            for(int j = 0; j < size; j++){
+                board[i][j] = "_";
+            }
+        }
+    }
+
+    public static void printBoard () {
         System.out.print("---------");
         System.out.println();
-        for (int i=0; i<board.length; i++){
+        for (int i=0; i<size; i++){
             System.out.print("| ");
-            for (int j=0; j<board[i].length; j++){
+            for (int j=0; j<size; j++){
                 System.out.print(board[i][j] + " ");
             }
             System.out.print("|");
@@ -40,31 +46,31 @@ public class TicTacToe {
         return arrayNewPosition;
     }
 
-    static void placeNewPosition(int[] newPositions, char currentPlayer){
+    public static void placeNewPosition(int[] newPositions, String currentPlayer){
         board[newPositions[0]][newPositions[1]] = currentPlayer;
     }
 
-    static int[] checkCorrectPosition(int[] newPositions ){
+    public static int[] checkCorrectPosition(int[] newPositions ){
         for (int i=0; i<newPositions.length ;i++){
             if (newPositions[i]< 0 || newPositions[i]>2){
                 System.out.println("This position does not exist");
                 return captureNewPosition();
             }
         }
-        if (board[newPositions[0]][newPositions[1]]!='_'){
+        if (board[newPositions[0]][newPositions[1]]!="_"){
             System.out.println("This position is taken");
             return captureNewPosition();
         }
         return newPositions;
     }
 
-    static boolean checkWin(char currentPlayer){
-        for (int i=0;i<3 ;i++){
+    public static boolean checkWin(String currentPlayer){
+        for (int i=0;i<size ;i++){
             if (board[i][0]==currentPlayer && board[i][1]==currentPlayer && board[i][2]==currentPlayer) {
                 return true;
             }
         }
-        for (int i=0;i<3 ;i++){
+        for (int i=0;i<size ;i++){
             if (board[0][i]==currentPlayer && board[1][i]==currentPlayer && board[2][i]==currentPlayer) {
                 return true;
             }
@@ -78,10 +84,10 @@ public class TicTacToe {
         return false;
     }
 
-    static boolean checkDraw(){
-        for (int i = 0; i < board.length; i++) {
-            for (int j = 0; j < board.length; j++) {
-                if (board[i][j] == '_') {
+    public static boolean checkDraw(){
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                if (board[i][j] == "_") {
                     return false;
                 }
             }
