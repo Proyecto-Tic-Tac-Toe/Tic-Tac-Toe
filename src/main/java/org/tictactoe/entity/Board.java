@@ -8,7 +8,13 @@ public class Board {
     private static String[][] board;
     private static int size = 3;
 
+    public static String[][] getBoard() {
+        return board;
+    }
 
+    public static int getSize() {
+        return size;
+    }
 
     public static void initializeBoard (){
         board = new String[size][size];
