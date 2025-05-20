@@ -1,10 +1,100 @@
-TicTacToe Methods
-📌Feature printBoard: This method displays the current state of the Tic Tac Toe board in the console.
-📌Feature captureNewPosition: This method is responsible for capturing a new move from the user during the Tic Tac Toe game. It prompts the user to enter two integers (representing the row and column) separated by a space.
-📌Feature placeNewPosition: This method places the current player's symbol on the game board at the specified position.
-    Parameters
-    int[] newPositions 
-    char currentPlayer
-📌Feature checkCorrectPosition: This method validates the position selected by the user to ensure it is within the bounds of the board and not already occupied.
-    Parameters
-    int[] newPositions
+# 🎮 Tic Tac Toe (Tres en Raya) en Java
+
+Un sencillo juego de consola **Tic Tac Toe** implementado en Java. Este proyecto demuestra principios de programación orientada a objetos, interacción por consola, y control de flujo básico.
+
+## 📑 Índice
+
+- [Características](#-características)
+- [Cómo ejecutar](#-cómo-ejecutar)
+- [Estructura del proyecto](#-estructura-del-proyecto)
+- [Métodos principales](#-métodos-principales)
+- [Tests](#-tests)
+- [Equipo](#-equipo)
+
+---
+
+## 🧩 Características
+
+- Tablero visual en consola.
+- Captura de movimientos por el usuario.
+- Validación de jugadas (evita sobrescribir casillas).
+- Alternancia entre dos jugadores.
+- Control del final de la partida (victoria o empate).
+
+---
+
+## 🚀 Cómo ejecutar
+
+### Requisitos
+
+- Java 17 o superior
+- Maven (opcional, si quieres construir el proyecto como un paquete)
+
+### Ejecución desde terminal
+
+```bash
+
+javac -d out $(find ./src -name "*.java")
+java -cp out org.tictactoe.Main
+```
+### Usando Maven
+```bash
+
+mvn clean compile
+mvn exec:java -Dexec.mainClass="org.tictactoe.Main"
+```
+
+---
+
+## 📁 Estructura del proyecto
+
+```bash
+
+Tic-Tac-Toe/
+├── src/
+│   └── main/
+│   │   └── java/
+│   │       └── org/
+│   │           └── tictactoe/
+│   │               ├── Main.java          
+│   │               ├── entity/
+│   │                   ├── Board.java     
+│   │                   └── Game.java   
+│   │                   └── Player.java
+│   └── test/            
+│       └── java/
+│            └── BoardTest.java                  
+├── pom.xml                              
+└── README.md
+```
+
+---
+
+## 🔍 Métodos principales
+- printBoard(): muestra el estado actual del tablero.
+
+- captureNewPosition(): pide al usuario fila y columna para su jugada.
+
+- placeNewPosition(int[] position, char player): coloca la ficha del jugador.
+
+- checkCorrectPosition(int[] position): valida que la posición esté libre y dentro del tablero._
+
+---
+
+
+## 🧪 Tests
+Si has incluido tests (por ejemplo con JUnit 5), puedes ejecutarlos con:
+```bash
+
+mvn test
+```
+
+---
+
+## 👯‍♂️ Equipo
+
+### [Paula Calvo](https://github.com/PCalvoGarcia)
+### [Vitaliia Rubanenko](https://github.com/vitaFlash)
+### [Paola Andrea](https://github.com/PaolaAPL17)
+### [Ana Carina Pillajo](https://github.com/acpp2510)
+
