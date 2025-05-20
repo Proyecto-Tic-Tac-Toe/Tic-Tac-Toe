@@ -5,12 +5,14 @@ import java.util.Scanner;
 public class Board {
 
 
-    private static String[size][size] board;
+    private static String[][] board;
     private static int size = 3;
 
 
 
     public static void initializeBoard (){
+        board = new String[size][size];
+
         for(int i = 0; i < size; i++){
             for(int j = 0; j < size; j++){
                 board[i][j] = "_";
