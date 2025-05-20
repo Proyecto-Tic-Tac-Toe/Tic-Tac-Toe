@@ -11,6 +11,7 @@ public class Game {
     public static Player player2;
 
     public static void playerAssigne(){
+
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter name player1, you play witch X: ");
         player1 = new Player("X",scanner.nextLine());
@@ -33,9 +34,9 @@ public class Game {
 
         Player currentPlayer = player1;
         boolean gameOver = false;
-
+        board.printBoard();
         while (!gameOver) {
-            board.printBoard();
+
             board.placeNewPosition(board.checkCorrectPosition(captureNewPosition()), currentPlayer.getSymbol());
             board.printBoard();
             if(board.checkWin(currentPlayer.getSymbol())){
