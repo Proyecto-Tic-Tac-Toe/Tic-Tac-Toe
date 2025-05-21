@@ -56,10 +56,18 @@ public class Board {
         System.out.print("Select a row (0-2) and a column (0-2), enter the numbers separated by a space: ");
         String newPosition = scanner.nextLine();
         String[] stringArrayNewPosition = newPosition.split(" ");
+
         int[] arrayNewPosition = new int[2];
         for(int i = 0; i < stringArrayNewPosition.length; i++){
-            arrayNewPosition[i] = Integer.parseInt(stringArrayNewPosition[i]);
+            if (!stringArrayNewPosition[i].equals("0") && !stringArrayNewPosition[i].equals("1") && !stringArrayNewPosition[i].equals("2")){
+                System.out.println("Enter only a couple of numeric values between 0 and 2");
+                return captureNewPosition();
+
+            } else {
+                arrayNewPosition[i] = Integer.parseInt(stringArrayNewPosition[i]);
+            }
         }
+
         arrayNewPosition = checkCorrectPosition(arrayNewPosition);
         return arrayNewPosition;
     }
