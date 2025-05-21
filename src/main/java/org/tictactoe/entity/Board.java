@@ -1,5 +1,6 @@
 package org.tictactoe.entity;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Board {
@@ -26,20 +27,29 @@ public class Board {
         }
     }
 
-    public static void printBoard () {
-        System.out.print("---------");
-        System.out.println();
-        for (int i=0; i<size; i++){
-            System.out.print("| ");
-            for (int j=0; j<size; j++){
-                System.out.print(board[i][j] + " ");
+    public static void printBoard() {
+        System.out.println("╔═══════════════════════════════╗");
+        for (int row = 0; row < size; row++) {
+            for (int line = 0; line < 6; line++) {
+                System.out.print("║ ");
+                for (int col = 0; col < size; col++) {
+                    String cell = board[row][col];
+                    String[] art;
+                    if ("X".equals(cell)) {
+                        art = SymbolArt.getX();
+                    } else if ("O".equals(cell)) {
+                        art = SymbolArt.getO();
+                    } else {
+                        art = SymbolArt.getEmpty();
+                    }
+                    System.out.print(art[line] + "  ");
+                }
+                System.out.println("║");
             }
-            System.out.print("|");
-            System.out.println();
-
+            System.out.println("╠═══════════════════════════════╣");
         }
-        System.out.println("---------");
     }
+
 
     public static int[] captureNewPosition(){
         Scanner scanner = new Scanner(System.in);
@@ -65,7 +75,7 @@ public class Board {
                 return captureNewPosition();
             }
         }
-        if (board[newPositions[0]][newPositions[1]]!="_"){
+        if (!Objects.equals(board[newPositions[0]][newPositions[1]], "_")){
             System.out.println("This position is taken");
             return captureNewPosition();
         }
@@ -74,28 +84,25 @@ public class Board {
 
     public static boolean checkWin(String currentPlayer){
         for (int i=0;i<size ;i++){
-            if (board[i][0]==currentPlayer && board[i][1]==currentPlayer && board[i][2]==currentPlayer) {
+            if (Objects.equals(board[i][0], currentPlayer) && Objects.equals(board[i][1], currentPlayer) && Objects.equals(board[i][2], currentPlayer)) {
                 return true;
             }
         }
         for (int i=0;i<size ;i++){
-            if (board[0][i]==currentPlayer && board[1][i]==currentPlayer && board[2][i]==currentPlayer) {
+            if (Objects.equals(board[0][i], currentPlayer) && Objects.equals(board[1][i], currentPlayer) && Objects.equals(board[2][i], currentPlayer)) {
                 return true;
             }
         }
-        if (board[0][0]==currentPlayer && board[1][1]==currentPlayer && board[2][2]==currentPlayer) {
+        if (Objects.equals(board[0][0], currentPlayer) && Objects.equals(board[1][1], currentPlayer) && Objects.equals(board[2][2], currentPlayer)) {
             return true;
         }
-        if (board[0][2]==currentPlayer && board[1][1]==currentPlayer && board[2][0]==currentPlayer) {
-            return true;
-        }
-        return false;
+        return Objects.equals(board[0][2], currentPlayer) && Objects.equals(board[1][1], currentPlayer) && Objects.equals(board[2][0], currentPlayer);
     }
 
     public static boolean checkDraw(){
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-                if (board[i][j] == "_") {
+                if (Objects.equals(board[i][j], "_")) {
                     return false;
                 }
             }
