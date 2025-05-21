@@ -4,12 +4,22 @@ Un sencillo juego de consola **Tic Tac Toe** implementado en Java. Este proyecto
 
 ## 📑 Índice
 
+- [Visuales del proyecto](#-visuales-del-proyecto)
 - [Características](#-características)
 - [Cómo ejecutar](#-cómo-ejecutar)
 - [Estructura del proyecto](#-estructura-del-proyecto)
 - [Métodos principales](#-métodos-principales)
 - [Tests](#-tests)
 - [Equipo](#-equipo)
+
+---
+## 📸 Visuales del proyecto
+
+![Inicio del juego](images/newGame.png)
+
+![Inicio del juego](images/gameProcess.png)
+
+![Final del juego](images/endGame.png)
 
 ---
 
@@ -29,6 +39,13 @@ Un sencillo juego de consola **Tic Tac Toe** implementado en Java. Este proyecto
 
 - Java 17 o superior
 - Maven (opcional, si quieres construir el proyecto como un paquete)
+
+### Clonar repositorio
+
+```bash
+
+git clone https://github.com/Proyecto-Tic-Tac-Toe/Tic-Tac-Toe.git
+```
 
 ### Ejecución desde terminal
 
@@ -66,6 +83,10 @@ Tic-Tac-Toe/
 │            └── BoardTest.java                  
 ├── pom.xml                              
 └── README.md
+└── images/
+    └── newGame.png
+    └── gameProcess.png
+    └── endGame.png
 ```
 
 ---
