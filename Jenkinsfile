@@ -4,7 +4,7 @@ pipeline {
     environment {
         IMAGE_NAME = 'tic-tac-toe'                      // Variable to store your app name
         DOCKER_CREDENTIALS_ID = 'dockerhub-creds'              // Jenkins credential ID
-        // DOCKER_USER = 'vitaflash'
+        DOCKER_USER = 'vitaflash'
         IMAGE_TAG = 'version_first'                           // Variable to store the image tag
     }
 
@@ -13,11 +13,11 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(
                     credentialsId: "${DOCKER_CREDENTIALS_ID}",
-                    usernameVariable: 'DOCKER_USER',
-                    passwordVariable: 'DOCKER_PASS'
+                    usernameVariable: 'DOCKER_USERNAME',
+                    passwordVariable: 'DOCKER_PASSWORD'
                 )]) {
                     sh '''
-                        echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
+                        echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
                     '''
                 }
             }
