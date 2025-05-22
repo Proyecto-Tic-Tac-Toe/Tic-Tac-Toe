@@ -59,6 +59,10 @@ public class Board {
 
         int[] arrayNewPosition = new int[2];
         for(int i = 0; i < stringArrayNewPosition.length; i++){
+            if (stringArrayNewPosition.length>2){
+                System.out.println("Enter only a couple of numeric values between 0 and 2");
+                return captureNewPosition();
+            }
             if (!stringArrayNewPosition[i].equals("0") && !stringArrayNewPosition[i].equals("1") && !stringArrayNewPosition[i].equals("2")){
                 System.out.println("Enter only a couple of numeric values between 0 and 2");
                 return captureNewPosition();
@@ -77,12 +81,7 @@ public class Board {
     }
 
     public static int[] checkCorrectPosition(int[] newPositions ){
-        for (int i=0; i<newPositions.length ;i++){
-            if (newPositions[i]< 0 || newPositions[i]>2){
-                System.out.println("This position does not exist");
-                return captureNewPosition();
-            }
-        }
+
         if (!Objects.equals(board[newPositions[0]][newPositions[1]], "_")){
             System.out.println("This position is taken");
             return captureNewPosition();
