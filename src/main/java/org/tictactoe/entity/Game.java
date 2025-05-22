@@ -1,7 +1,6 @@
 package org.tictactoe.entity;
 
 import java.util.Scanner;
-
 import static org.tictactoe.entity.Board.*;
 
 

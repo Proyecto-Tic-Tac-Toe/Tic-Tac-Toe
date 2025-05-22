@@ -2,10 +2,10 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = 'tic-tac-toe'                      // Variable to store your app name
-        DOCKER_CREDENTIALS_ID = 'dockerhub-creds'              // Jenkins credential ID
+        IMAGE_NAME = 'tic-tac-toe'
+        DOCKER_CREDENTIALS_ID = 'dockerhub-creds'
         DOCKER_USER = 'vitaflash'
-        IMAGE_TAG = 'version_first'                           // Variable to store the image tag
+        IMAGE_TAG = 'version_first'
     }
 
     stages {

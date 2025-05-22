@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 public class Board {
 
-
     private static String[][] board;
     private static int size = 3;
 
@@ -18,6 +17,7 @@ public class Board {
     }
 
     public static void initializeBoard (){
+
         board = new String[size][size];
 
         for(int i = 0; i < size; i++){
@@ -28,6 +28,7 @@ public class Board {
     }
 
     public static void printBoard() {
+
         System.out.println("╔═══════════════════════════════╗");
         for (int row = 0; row < size; row++) {
             for (int line = 0; line < 6; line++) {
@@ -52,6 +53,7 @@ public class Board {
 
 
     public static int[] captureNewPosition(){
+
         Scanner scanner = new Scanner(System.in);
         System.out.print("Select a row (0-2) and a column (0-2), enter the numbers separated by a space: ");
         String newPosition = scanner.nextLine();
@@ -90,23 +92,28 @@ public class Board {
     }
 
     public static boolean checkWin(String currentPlayer){
+
         for (int i=0;i<size ;i++){
             if (Objects.equals(board[i][0], currentPlayer) && Objects.equals(board[i][1], currentPlayer) && Objects.equals(board[i][2], currentPlayer)) {
                 return true;
             }
         }
+
         for (int i=0;i<size ;i++){
             if (Objects.equals(board[0][i], currentPlayer) && Objects.equals(board[1][i], currentPlayer) && Objects.equals(board[2][i], currentPlayer)) {
                 return true;
             }
         }
+
         if (Objects.equals(board[0][0], currentPlayer) && Objects.equals(board[1][1], currentPlayer) && Objects.equals(board[2][2], currentPlayer)) {
             return true;
         }
+
         return Objects.equals(board[0][2], currentPlayer) && Objects.equals(board[1][1], currentPlayer) && Objects.equals(board[2][0], currentPlayer);
     }
 
     public static boolean checkDraw(){
+
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 if (Objects.equals(board[i][j], "_")) {
