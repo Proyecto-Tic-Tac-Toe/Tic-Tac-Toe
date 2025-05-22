@@ -4,7 +4,7 @@ pipeline {
     environment {
         IMAGE_NAME = 'tic-tac-toe'                      // Variable to store your app name
         DOCKER_CREDENTIALS_ID = 'dockerhub-creds'              // Jenkins credential ID
-        DOCKER_USER = 'vitaflash'
+        // DOCKER_USER = 'vitaflash'
         IMAGE_TAG = 'version_first'                           // Variable to store the image tag
     }
 
