@@ -1,0 +1,20 @@
+# Maven build directory
+target/
+
+# IntelliJ project files
+.idea/
+*.iml
+
+# OS junk files
+.DS_Store
+
+# Logs and compiled files
+*.log
+*.class
+
+# Version control
+.git
+.gitignore
+
+# Miscellaneous
+README.md
