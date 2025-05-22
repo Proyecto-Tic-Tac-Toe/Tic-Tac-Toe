@@ -10,7 +10,7 @@ public class Game {
     public static Player player1;
     public static Player player2;
 
-    public static void playerAssigne(){
+    public static void playerAssign(){
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter name player1, you play witch X: ");
@@ -30,7 +30,7 @@ public class Game {
         System.out.println("██║ ╚████║███████╗╚███╔███╔╝    ╚██████╔╝██║  ██║██║ ╚═╝ ██║███████╗");
         System.out.println("╚═╝  ╚═══╝╚══════╝ ╚══╝╚══╝      ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝");
 
-        playerAssigne();
+        playerAssign();
 
         Player currentPlayer = player1;
         boolean gameOver = false;
